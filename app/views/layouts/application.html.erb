@@ -10,20 +10,11 @@
   </head>
 
   <body data-scrollbar-auto-hide="n" class="hold-transition sidebar-mini layout-fixed">
-      <div class="wrapper">
-        <%= render "base/header" %>
-        <%= render "base/sidebar" %>
-
-        <div class="content-wrapper">
-          <div class="content container-fluid">
-            <div class="container-fluid" style="padding-top: 10px;">
-              <%= yield %>
-            </div>
-          </div>
-        </div>
-
-        <%= render "base/footer" %>
-        <%= render "base/control_sidebar" %>
-      <div>
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-info alert-dismissable"><%=msg%></div>
+    <% end %>
+    <div class="wrapper">
+      <%= yield %>
+    <div>
   </body>
 </html>

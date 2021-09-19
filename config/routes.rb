@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
   root to: 'home#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  devise_for :admin_users, path: 'admin', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
+
+  namespace :admin do
+    get '/', to: 'dashboards#show', as: :dashboard
+  end
 end

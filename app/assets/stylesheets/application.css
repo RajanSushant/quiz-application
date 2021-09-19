@@ -13,8 +13,6 @@
  *= require_tree .
  *= require_self
  *= require bootstrap
- *= require admin-lte
- *= require font-awesome
  */
 @font-face {
 	font-family: "Quotable";
